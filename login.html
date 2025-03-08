@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 50%; margin: auto; padding: 20px; border: 1px solid black; }
+        input, button { padding: 10px; margin: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
