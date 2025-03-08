@@ -34,6 +34,14 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Check if the user is authenticated
+        const token = localStorage.getItem("token");
+        if (!token) {
+          alert("You must log in to access this page.");
+          window.location.href = "login.html"; // Redirect to login page
+        }
+      </script>
 
 </body>
 </html>

@@ -24,6 +24,8 @@ async function login() {
     console.log("Response from server:", data);
 
     if (data.status === "success") {
+      // Store the token in localStorage
+      localStorage.setItem("token", data.token);
       alert("Login successful!");
       window.location.href = "attendance.html"; // Redirect to attendance page
     } else {
