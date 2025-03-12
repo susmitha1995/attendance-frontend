@@ -1,4 +1,4 @@
-const backendURL = "http://localhost:3000/mark-attendance";
+const backendURL = "http://localhost:3000/mark-attendance"; // Change to your deployed backend URL
 
 async function markAttendance() {
   const name = document.getElementById("doctorName").value.trim();
@@ -7,11 +7,21 @@ async function markAttendance() {
     return;
   }
 
+  // Retrieve token from localStorage
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Unauthorized! Please log in again.");
+    return;
+  }
+
   try {
     const response = await fetch(backendURL, {
       method: "POST",
-      body: JSON.stringify({ name: name }),
-      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name }),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}` // Send token in Authorization header
+      },
     });
 
     if (!response.ok) {
