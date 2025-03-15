@@ -1,4 +1,4 @@
-const backendURL = "https://attendance-backend-production-da89.up.railway.app";
+const backendURL = "https://attendance-backend-production-da89.up.railway.app/login";
 
 async function login() {
   const username = document.getElementById("username").value.trim();
