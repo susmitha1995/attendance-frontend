@@ -15,14 +15,14 @@ async function login() {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
+  
+    const data = await response.json(); // Parse the response body
     console.log("Response from server:", data);
-
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}, Message: ${data.message}`);
+    }
+  
     if (data.status === "success") {
       // Store the token in localStorage
       localStorage.setItem("token", data.token);
