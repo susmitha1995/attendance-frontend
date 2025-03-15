@@ -1,4 +1,4 @@
-const backendURL = "http://localhost:3000/mark-attendance"; // Change to your deployed backend URL
+const backendURL = "https://attendance-backend-production-da89.up.railway.app/mark-attendance";
 
 async function markAttendance() {
   const name = document.getElementById("doctorName").value.trim();

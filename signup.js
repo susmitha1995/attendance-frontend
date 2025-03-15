@@ -1,4 +1,4 @@
-const backendURL = "http://localhost:3000/signup";
+const backendURL = "https://attendance-backend-production-da89.up.railway.app/signup";
 
 async function signup() {
   const username = document.getElementById("username").value.trim();
